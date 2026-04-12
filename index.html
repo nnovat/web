@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Novat · Genera ingresos desde tu celular</title>
+    <!-- Título actualizado a Novaft -->
+    <title>Novaft · Genera ingresos desde tu celular</title>
     <!-- Google Fonts (fallback) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
@@ -32,9 +33,9 @@
             text-justify: inter-word;
         }
 
-        /* Custom fonts - Actualizado a Novat */
+        /* Custom fonts - Actualizado a Novaft */
         @font-face {
-            font-family: 'NovatFont';
+            font-family: 'NovaftFont';
             src: url('https://raw.githubusercontent.com/nordacc/web/main/tipografias/novat.ttf') format('truetype');
             font-display: swap;
         }
@@ -219,7 +220,7 @@
             box-shadow: 0 4px 12px rgba(16,107,99,0.2);
         }
         
-        /* Logo con gradiente mediante máscara - Actualizado a Novat */
+        /* Logo con gradiente mediante máscara - Actualizado a Novaft */
         .gradient-mask-logo {
             display: inline-block;
             width: 130px;
@@ -264,7 +265,43 @@
             display: inline-block;
             margin-bottom: 12px;
         }
+
+        /* Pop-up de scroll - VERSIÓN MEJORADA PARA MÓVILES */
+        .scroll-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(16, 107, 99, 0.95);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 60px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            animation: floatPopup 2s infinite ease-in-out;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            cursor: default;
+            border: 1px solid rgba(255,255,255,0.2);
+            white-space: nowrap;
+            max-width: 90vw;
+        }
         
+        .scroll-popup i {
+            font-size: 1rem;
+        }
+
+        @keyframes floatPopup {
+            0% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-6px); }
+            100% { transform: translateX(-50%) translateY(0); }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             section {
@@ -322,6 +359,17 @@
             .earnings-example h4 {
                 font-size: 1.2rem;
             }
+            
+            /* Pop-up optimizado para tablet */
+            .scroll-popup {
+                bottom: 15px;
+                padding: 8px 16px;
+                font-size: 0.85rem;
+                gap: 8px;
+            }
+            .scroll-popup i {
+                font-size: 0.9rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -340,6 +388,31 @@
             .gradient-mask-logo {
                 width: 85px;
                 height: 55px;
+            }
+            
+            /* Pop-up ultra optimizado para móviles pequeños */
+            .scroll-popup {
+                bottom: 12px;
+                padding: 6px 12px;
+                font-size: 0.75rem;
+                gap: 6px;
+                white-space: nowrap;
+                max-width: 95vw;
+            }
+            .scroll-popup i {
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Para pantallas muy pequeñas (ej. iPhone SE) */
+        @media (max-width: 375px) {
+            .scroll-popup {
+                padding: 5px 10px;
+                font-size: 0.7rem;
+                gap: 5px;
+            }
+            .scroll-popup i {
+                font-size: 0.7rem;
             }
         }
         
@@ -414,18 +487,25 @@
 </head>
 <body>
 
-    <!-- HERO SECTION con 100vh y centrado vertical - Actualizado a Novat -->
+    <!-- POP-UP DE SCROLL (se oculta al hacer scroll) -->
+    <div id="scrollPopup" class="scroll-popup">
+        <i class="fas fa-arrow-down"></i>
+        <span>Desliza hacia abajo</span>
+        <i class="fas fa-arrow-down"></i>
+    </div>
+
+    <!-- HERO SECTION con 100vh y centrado vertical - Actualizado a Novaft -->
     <section class="hero-section" id="inicio">
         <div class="container hero-container">
             <div data-aos="fade-up" data-aos-duration="800" class="hero-content">
-                <!-- Logo Novat con gradiente -->
+                <!-- Logo Novaft con gradiente -->
                 <div style="display: flex; justify-content: center; margin-bottom: 20px;">
                     <div class="gradient-mask-logo"></div>
                 </div>
                 
-                <!-- Título "novat" en minúscula con tipografía oficial -->
-                <h1 class="hero-title" style="font-family: 'NovatFont', 'Inter', sans-serif; font-size: 4rem; font-weight: 700; color: #106b63; margin-bottom: 12px; letter-spacing: -0.02rem; text-transform: lowercase;">
-                    novat
+                <!-- Título "Novaft" con 'N' mayúscula y tipografía oficial -->
+                <h1 class="hero-title" style="font-family: 'NovaftFont', 'Inter', sans-serif; font-size: 4rem; font-weight: 700; color: #106b63; margin-bottom: 12px; letter-spacing: -0.02rem;">
+                    Novaft
                 </h1>
                 
                 <!-- Subtítulo -->
@@ -433,9 +513,9 @@
                     Genera ingresos desde tu celular
                 </p>
                 
-                <!-- Nueva descripción de Novat -->
+                <!-- Nueva descripción de Novaft -->
                 <p style="font-size: 1.05rem; max-width: 720px; margin: 0 auto; color: #2c3e44; line-height: 1.6; text-align: justify;">
-                    Novat es un conglomerado empresarial dedicado a la gestión y fortalecimiento de sus marcas dentro del entorno digital. Como empresa principal, lidera e impulsa estratégicamente a sus unidades de negocio, Novaklar y Hanabi, compañías especializadas en la comercialización de productos y servicios digitales en todo Colombia.
+                    Novaft es un conglomerado empresarial dedicado a la gestión y fortalecimiento de sus marcas dentro del entorno digital. Como empresa principal, lidera e impulsa estratégicamente a sus unidades de negocio, Novaklar y Hanabi, compañías especializadas en la comercialización de productos y servicios digitales en todo Colombia.
                 </p>
                 
                 <div style="text-align: center; margin-top: 32px;">
@@ -600,9 +680,10 @@
         </div>
     </section>
 
+    <!-- Footer actualizado a Novaft -->
     <footer>
         <div class="container">
-            <p>© 2025 Novat · Conglomerado empresarial digital</p>
+            <p>© 2025 Novaft · Conglomerado empresarial digital</p>
         </div>
     </footer>
 
@@ -625,6 +706,55 @@
                 alert("✨ ¡Gracias por tu interés! Un asesor se pondrá en contacto por WhatsApp pronto. 🚀");
             });
         }
+
+        // --- Lógica para el Pop-up de Scroll ---
+        const popup = document.getElementById('scrollPopup');
+        let popupTimeout;
+        let hasScrolled = false;
+
+        // Función para mostrar el popup después de 1 segundo
+        function showScrollPopup() {
+            if (!hasScrolled) {
+                popup.style.opacity = '1';
+                popup.style.display = 'flex';
+            }
+        }
+
+        // Función para ocultar el popup
+        function hideScrollPopup() {
+            popup.style.opacity = '0';
+            // Lo ocultamos completamente después de la transición para que no estorbe
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 300);
+        }
+
+        // Mostrar el popup al cargar la página (con un pequeño delay)
+        window.addEventListener('load', () => {
+            // Ocultamos inicialmente por si acaso
+            popup.style.opacity = '0';
+            popup.style.display = 'flex';
+            
+            popupTimeout = setTimeout(() => {
+                showScrollPopup();
+                
+                // Ocultar automáticamente después de 5 segundos si no ha hecho scroll
+                setTimeout(() => {
+                    if (!hasScrolled) {
+                        hideScrollPopup();
+                    }
+                }, 5000);
+            }, 1000);
+        });
+
+        // Detectar el scroll para ocultar el popup inmediatamente
+        window.addEventListener('scroll', () => {
+            if (!hasScrolled) {
+                hasScrolled = true;
+                clearTimeout(popupTimeout); // Cancela el timeout de mostrar si ya scrolleó antes
+                hideScrollPopup();
+            }
+        });
     </script>
 </body>
 </html>
